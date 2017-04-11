@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+#frm1 h2 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body bgcolor="#FFCCFF">
+<form id="frm1">
+<h2>FORM</h2>
+<p>Firstname: <input id="firstName"><span id=errFirst style="color:red; font-size:7"></span></p>
+<p>Lastname: <input class="text" id="lastName"><span id=errLast style="color:red; font-size:7"></span></p>
+<p><u>Address</u></p>
+<pre>   House number: <input class="text" id="houseNum"><span id=errHouse style="color:red; font-size:7"></span></pre>
+<pre>   Street: <input class="text" id="street"><span id=errStreet style="color:red; font-size:7"></span></pre>
+<pre>   City: <input class="text" id="city"><span id=errCity style="color:red; font-size:7"></span></pre>
+<pre>   Zipcode: <input class="text" id="zipcode"><span id=errZipcode First style="color:red; font-size:7"></span></pre>
+<p>Phone number: <input class="text" id="phoneNum" placeholder="+6620000000"><span id=errPhone style="color:red; font-size:7"></span></p>
+<p>Cell phone number: <input class="text" id="cellPhoneNum" placeholder="+66000000000"><span id=errCell style="color:red; font-size:7"></span></p>
+<p>Birthday: <input type="date" class="text" id="birthday" placeholder="DD/MM/YYYY"><span id=errBirth style="color:red; font-size:7"></span></p>
+<p>Citizenship number: <input class="text" id="citizenNum"><span id=errCitizen style="color:red; font-size:7"></span></p>
+
+<p>Zodiac Sign: <select class="select" id="zodiacSign">
+  <option>(Choose)</option>
+  <option>Aquarius</option>
+  <option>Pisces</option>
+  <option>Aries</option>
+  <option>Taurus</option>
+  <option>Gemini</option>
+  <option>Cancer</option>
+  <option>Leo</option>
+  <option>Virgo</option>
+  <option>Libra</option>
+  <option>Scorpio</option>
+  <option>Sagittarius</option>
+  <option>Capricorn</option>
+</select></p>
+
+
+<p>Zodiac Year: <select class="select" id="zodiacYear">
+  <option>(Choose)</option>
+  <option>Rat</option>
+  <option>Ox</option>
+  <option>Tiger</option>
+  <option>Rabbit</option>
+  <option>Dragon</option>
+  <option>Snake</option>
+  <option>Horse</option>
+  <option>Goat</option>
+  <option>Monkey</option>
+  <option>Rooster</option>
+  <option>Dog</option>
+  <option>Pig</option>
+</select></p>
+
+<p>Birth Day of Week: <select class="select" id="birthdayWeek">
+  <option>(Choose)</option>
+  <option>Monday</option>
+  <option>Tuesday</option>
+  <option>Wednesday</option>
+  <option>Thursday</option>
+  <option>Friday</option>
+  <option>Saturday</option>
+  <option>Sunday</option>
+</select></p>
+
+<button type="button" onclick="save()">Save</button> &ensp;
+<button type="button" onclick="cancel()">Cancel</button> &ensp;
+<button type="button" onclick="submitt()">Submit</button> 
+
+</form>
+
+<script>
+document.getElementById("firstName").value = localStorage.getItem("firstName");
+document.getElementById("lastName").value = localStorage.getItem("lastName");
+document.getElementById("houseNum").value = localStorage.getItem("houseNum");
+document.getElementById("street").value = localStorage.getItem("street");
+document.getElementById("city").value = localStorage.getItem("city");
+document.getElementById("zipcode").value = localStorage.getItem("zipcode");
+document.getElementById("phoneNum").value = localStorage.getItem("phoneNum");
+document.getElementById("cellPhoneNum").value = localStorage.getItem("cellPhoneNum");
+document.getElementById("birthday").value = localStorage.getItem("birthday");
+document.getElementById("citizenNum").value = localStorage.getItem("citizenNum");
+document.getElementById("zodiacSign").selectedIndex = localStorage.getItem("zodiacSign");
+document.getElementById("zodiacYear").selectedIndex = localStorage.getItem("zodiacYear");
+document.getElementById("birthdayWeek").selectedIndex = localStorage.getItem("birthdayWeek");
+function save(){
+    firstName = document.getElementById("firstName").value;
+    localStorage.setItem("firstName", firstName);
+	lastName = document.getElementById("lastName").value;
+    localStorage.setItem("lastName", lastName);
+	houseNum = document.getElementById("houseNum").value;
+    localStorage.setItem("houseNum", houseNum);
+	street = document.getElementById("street").value;
+    localStorage.setItem("street", street);
+	city = document.getElementById("city").value;
+    localStorage.setItem("city", city);
+	zipcode = document.getElementById("zipcode").value;
+    localStorage.setItem("zipcode", zipcode);
+	phoneNum = document.getElementById("phoneNum").value;
+    localStorage.setItem("phoneNum", phoneNum);
+	cellPhoneNum = document.getElementById("cellPhoneNum").value;
+    localStorage.setItem("cellPhoneNum", cellPhoneNum);
+	birthday = document.getElementById("birthday").value;
+    localStorage.setItem("birthday", birthday);
+	citizenNum = document.getElementById("citizenNum").value;
+    localStorage.setItem("citizenNum", citizenNum);
+	zodiacSign = document.getElementById("zodiacSign").selectedIndex;
+    localStorage.setItem("zodiacSign", zodiacSign);
+	zodiacYear = document.getElementById("zodiacYear").selectedIndex;
+    localStorage.setItem("zodiacYear", zodiacYear);
+	birthdayWeek = document.getElementById("birthdayWeek").selectedIndex;
+    localStorage.setItem("birthdayWeek", birthdayWeek);
+	alert("already saved!")
+    }
+function cancel() {
+	document.getElementById("frm1").reset();
+}
+function submitt() {
+	if(document.getElementById("firstName").value == '')
+	{	
+		if(document.getElementById("lastName").value == '')
+		{
+		document.getElementById("errLast").innerHTML=" Field is empty";
+		}
+		document.getElementById("errFirst").innerHTML=" Field is empty";
+		
+	}
+	else if(document.getElementById("lastName").value == '')
+	{
+		document.getElementById("errLast").innerHTML=" Field is empty";
+	}
+	else
+	{
+	document.cookie = "Firstname="+document.getElementById("firstName").value+";expires=Mon, 1 May 2017 12:00:00 UTC;"
+	document.cookie = "Lastname="+document.getElementById("lastName").value+";expires=Mon, 1 May 2017 12:00:00 UTC;"
+	
+	if(confirm("cookies : "+document.cookie)){
+	window.location.href = 'Cookies.html';
+	}
+	}
+}
+
+</script>
+
+</body>
+</html>
