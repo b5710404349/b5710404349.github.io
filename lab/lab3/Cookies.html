@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cookies</title>
+</head>
+
+<html>
+<body>
+<h2> Example </h2>
+<p id="demo"></p>
+<table style="width:30%;border: 1px solid black">
+  <tr style="border: 1px solid black">
+  	<td id="one" style="border: 1px solid black"></td>
+  </tr>
+  <tr style="border: 1px solid black">
+  	<td id="two" style="border: 1px solid black"></td>
+  </tr>
+</table>
+<script>
+var x = document.cookie;
+var res = x.split(";");
+document.getElementById("one").innerHTML = res[0];
+document.getElementById("two").innerHTML = res[1];
+</script>
+
+</body>
+</html>

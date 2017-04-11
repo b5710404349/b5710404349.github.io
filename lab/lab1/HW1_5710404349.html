@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HW1_TEST</title>
+<style>
+
+h1,h2   {color: pink;text-decoration:underline}
+p   {color: yellow;}
+p.error {
+    color: red;
+}
+#p01 {
+	color: blue;
+}
+a:link    {color: #0F3; background-color:transparent; text-decoration:none}
+a:visited {color:white; background-color:transparent; text-decoration:underline}
+a:hover   {color:red; background-color:transparent; text-decoration:underline}
+a:active  {color:yellow; background-color:transparent; text-decoration:underline}
+table, th, td {
+    border-collapse: collapse;
+}
+.map {
+	color: #F00;
+}
+</style>
+
+
+</head>
+
+<body style="background-color:gray">
+<!-- This is a comment -->
+<h1 style="color:black">This is h1</h1>
+<hr />
+<h2>This is h2</h2>
+<hr />
+<p title="first paragraph">This is 
+first paragraph.</p><hr />
+<p>This is img >><img src="photo.jpg" width="100px" height="100" alt="G" /></p>
+<hr />
+<a href="http://www.google.com">This is google link</a><br /><br /><br />
+<p><a href="http://www.google.com"><img src="photo.jpg" width="100px" height="100" alt="G" /></a><b><< picture link </b></p>
+<hr />
+<p style="text-align:center;font-size:50px;font-family:Verdana;color:white"> This is TEXT Style </p>
+<hr />
+<h1>Formatting . .</h1>
+<p><b>bold or strong</b><i> italic or emphasized</i><sub> subscript</sub><sup>superscript </sup><mark>mark</mark><ins> inserted</ins><del> delete</del></p>
+<hr />
+<p>Marking <abbr title="Abbreviations">abbr</abbr> can give useful information to browsers</p>
+<p><bdo dir="rtl">This line will be written from right to left</bdo></p><hr />
+<p class="error">class Attribute</p>
+<p id="p01">id Attribute</p>
+<hr />
+<h1> Block div or span . .</h1>
+<p>This is<span style="color:red"> span.</span></p>
+<div style="background-color:black;color:white;padding:10px;">
+<p>This
+is
+div.
+</p>
+</div>
+<hr />
+
+<iframe src="iframe_test.html" name="iframe_a" height="200" width="300"></iframe><br />
+<br />
+<button type="button" onclick="myFunction()"> Change text below </button> <pre id="demo">Waiting . .
+Waiting . . </pre>
+<p><a href="http://www.w3schools.com" target="iframe_a">Go to W3Schools.com ( target iframe )</a></p>
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Changed ! ! \nChanged ! !";
+}
+</script>
+<hr />
+<table style="width:100%;border: 1px solid black">
+  <tr>
+    <th style="border: 1px solid black">
+    An Unordered List
+    </th>
+    <th style="border: 1px solid black">
+    An Ordered List
+    </th> 
+  </tr>
+  <tr>
+    <td style="border: 1px solid black">
+    <ul>
+  		<li>One</li>
+  		<li>Two</li>
+  		<li>Three</li>
+	</ul>
+    </td>
+    <td style="border: 1px solid black">
+    <ol>
+  		<li>One</li>
+  		<li>Two</li>
+  		<li>Three</li>
+	</ol> 
+    </td> 
+  </tr>
+</table>
+<hr />
+<h1>Image Maps</h1>
+<p>The <mark>map</mark> tag contains a number of <mark>area</mark> tags, that defines the clickable areas in the image-map</map><br /><br />
+<img src="MAP_THAI.png" alt="thaimap" width="300" height="450" usemap="#thaimap"/>
+<map name="thaimap">
+  <area shape="poly" coords="20,20,150,20,150,150,20,150,20,20" alt="North" href="https://en.wikipedia.org/wiki/Northern_Thailand" >
+  <area shape="poly" coords="150,70,270,70,270,190,150,190,150,70" alt="East" href="https://en.wikipedia.org/wiki/Isan">
+  <area shape="poly" coords="30,150,150,150,150,190,180,190,180,280,30,280,30,150" alt="Center" href="https://en.wikipedia.org/wiki/Central_Thailand">
+  <area shape="poly" coords="30,280,150,280,150,450,30,390,30,280" alt="South" href="https://en.wikipedia.org/wiki/Southern_Thailand">
+</map>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
